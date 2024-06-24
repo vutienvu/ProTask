@@ -1,0 +1,6 @@
+@ProTask_HostAddress = http://localhost:5050
+
+GET {{ProTask_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
