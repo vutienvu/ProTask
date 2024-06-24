@@ -14,4 +14,6 @@ public class Specialization
     
     [Required]
     public SeniorityEnum Seniority { get; set; }
+
+    public List<Programmer> Programmers { get; set; } = new List<Programmer>();
 }
