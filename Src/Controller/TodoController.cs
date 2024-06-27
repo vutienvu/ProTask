@@ -15,4 +15,10 @@ public class TodoController(ITodoService todoService) : ControllerBase
         var createdTodo = await todoService.AddAsync(todoRequest);
         return Ok(createdTodo);
     }
+
+    [HttpGet(Name = "GetTodos")]
+    public async Task<IActionResult> GetAllTodos()
+    {
+        return Ok(await todoService.GetAllAsync());
+    }
 }
