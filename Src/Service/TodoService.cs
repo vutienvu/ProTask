@@ -36,4 +36,26 @@ public class TodoService : ITodoService
         
         return todoResponse;
     }
+
+    public async Task<List<TodoResponse>> GetAllAsync()
+    {
+        var todos = await _dbSet.ToListAsync();
+
+        List<TodoResponse> resultList = new List<TodoResponse>();
+        
+        foreach (var todo in todos)
+        {
+            TodoResponse todoResponse = new TodoResponse();
+
+            todoResponse.TodoId = todo.TodoId;
+            todoResponse.Description = todo.Description;
+            todoResponse.Priority = todo.Priority;
+            todoResponse.CreatedOn = todo.CreatedOn;
+            todoResponse.ProgrammerId = todo.ProgrammerId;
+            
+            resultList.Add(todoResponse);
+        }
+
+        return resultList;
+    }
 }

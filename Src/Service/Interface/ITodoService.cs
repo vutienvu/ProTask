@@ -6,4 +6,5 @@ namespace ProTask.Service.Interface;
 public interface ITodoService
 {
     public Task<TodoResponse> AddAsync(TodoRequest todoRequest);
+    public Task<List<TodoResponse>> GetAllAsync();
 }
